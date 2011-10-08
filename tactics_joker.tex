@@ -38,9 +38,9 @@ Ingredients:
   \item 2 players.  More may be possible, but the logistics of that are up to you.
 \end{itemize}
 
-Shuffle the deck of cards and lay it out in a 7x7 grid, with a king card at each of the corners.  The cards represent terrain on a battlefield.  Red cards, diamonds and hearts, are flat plains.  Spades are forests and clubs are mountains.  Kings are castles.  Queens and jacks are new recruits.  Jokers are of course wild and will be covered later.  Aces have a value of 1.  Jacks and queens have a value of 10, but kings are 13.
+Shuffle the deck of cards and lay it out in a 7x7 grid, with a king card at each of the corners.  The cards represent terrain on a battlefield.  Red cards, diamonds and hearts, are flat plains.  Spades are mountains and clubs are forests.  Kings are castles.  Queens and jacks are new recruits.  Jokers are of course wild and will be covered later.  Aces have a value of 1.  Jacks and queens have a value of 10, but kings are 13.
 
-Each side has a set of \reinforcements tokens representing their combat units.  A group of dice is called an army.  An army can never be bigger than \maxarmy units, so spread out.  Each turn a player picks and moves several of his armies.  If an enemy unit occupies that piece of terrain, they fight.
+Each side has a set of \reinforcements tokens representing their combat units.  A group of units is called an army.  An army can never be bigger than \maxarmy units, so spread out.  Each turn a player picks and moves several of his armies.  If an enemy unit occupies that piece of terrain, they fight.
 
 \section{Winning}
 
@@ -52,8 +52,8 @@ When opposing armies enter the same space, combat happens.  Both sides roll dice
 
 \begin{itemize}
   \item Each player rolls a 6 sided die for each of the units in his army.  
-  \item Add the terrain bonus.  The defender uses the card the battle is taking place on.  The attacker uses the terrain he used to launch his attack.
-  \item Add 1 for each supporting unit.  A unit provides support if it's in a space adjacent to the battle. 
+  \item Add the value on the card as a terrain bonus.  The defender uses the card the battle is taking place on.  The attacker uses the terrain he used to launch his attack.
+  \item Add 1 for each supporting unit.  A unit provides support if it's in an army in a space adjacent to the battle.  Note that the battle only takes place in the space where the armies meet - being adjacent to the terrain an attacker left without being adjacent to the actual battle provides no support.  (Diagram needed?)
 \end{itemize}
 
 Whomever scores higher wins.  One of the loser's units dies, plus one more for every 5 points difference between the combat scores.  If the defender lost, his remaining army is pushed backward (if this isn't an option, the attacker chooses where the defender is pushed).  If the attacker lost, his units return to the space they were in before the attack.
@@ -68,13 +68,13 @@ The different cards represent different types of terrain and have different tact
 
 Plains are plain.  Nothing special here.  \emph{Hearts and diamonds.}
 
-Forests are difficult to move through but easily defended.  Entering a forest from a non-forest space requires each unit entering the space to roll high on a die roll.  Armies hiding in the forest are sheltered from their attackers - the attacker gains no terrain bonus, unless he is attacking from another forest space. \emph{Clubs.}
+Forests are difficult to move through but easily defended.  Entering a forest from a non-forest space requires each unit entering the space to roll high (4-6) on a die roll.  Each unit that rolls 4-6 moves into the terrain.  The others are left behind.  Armies hiding in the forest are sheltered from their attackers - the attacker gains no terrain bonus, unless he is attacking from another forest space. \emph{Clubs.}
 
 Mountains are also difficult to move through, requiring a high die roll to enter from a non mountain space.  They provide high ground.  When an attack is initiated from a mountain, the defender gets no terrain bonus to defense unless he is defending a mountain.  \emph{Spades.}
 
-Face cards are additional units that may be picked up.  Face cards do not have a suit, so no rolls are needed to enter those spaces.  When you land on a queen or jack card, add a unit to that army.  Then flip the face card over.  Recruits can only be collected once before they are depleted.  Face cards are always worth 10 points as combat squares.  \emph{Queens and jacks.}
+Face cards are additional units that may be picked up.  Face cards ignore their suit and always count as plains, so no rolls are needed to enter those spaces.  When you land on a queen or jack card, add a unit to that army.  Then flip the face card over.  Recruits can only be collected once before they are depleted.  Face cards are always worth 10 points as combat squares.  \emph{Queens and jacks.}
 
-Note that failing to move through difficult terrain still counts as a move action and works against the unit's 2 moves per turn limit.  Being recruited also counts against that limit.
+Note that failing to move through difficult terrain still counts as a move action and works against the unit's 2 moves per turn limit.  Being recruited also counts against that limit.  Also note that you must roll to enter rough terrain even when attacking.
 
 Jokers are wild cards.  When you land on a joker, choose a card from the leftover stack of cards, and replace the joker with that.  \emph{Jokers.}
 
@@ -87,7 +87,7 @@ In addition to terrain based recruitment, each castle has the opportunity to pro
 
 Set up the cards as described in setup.  7x7 grid, with a king in each corner.
 
-Now players choose their starting positions.  Player one picks one of the castles.  Then player two gets the next two castles.  Player one gets the last castle, but gets teh first turn.
+Now players choose their starting positions.  Player one picks one of the castles.  Then player two picks his two castles.  Player one gets the last castle, but gets the first turn.
 
 Each turn, roll for reinforcments at each castle.
 
@@ -122,7 +122,7 @@ Kobolds are weaker fighters than the other races.  During combat checks, disrega
 
 Humans are the standard race and should have no bonus.  However since all the other races are bonus based...
 
-Humans have an extra point of movement which can only be used to move a single unit at a time.  
+Humans have an extra point of movement which can only be used to move a one unit army at a time.  
 
 \subsubsection{Undead}
 
