@@ -3,13 +3,13 @@
 \documentclass{article}
 
 \title{Tactics Joker}
-\author{Jon Sagotsky}
+%\author{Jon Sagotsky}
 
 \setlength{\parindent}{0.0in}
 \setlength{\parskip}{0.1in}
 
 \begin{document}
-\maketitle
+%\maketitle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  V A R I A B L E S
 %
@@ -19,16 +19,18 @@
 %
 \def \maxarmy {6 }            % most units in a single army
 \def \reinforcements {15 }    % most units per player, on and off the board
+\def \startarmy {5 }          % starting army to place at a castle
 \def \recruitroll {6 }        % roll this or higher to recruit each turn
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+\huge
 Tactics Joker
 
-This is an attempt at a tactical board game using commodity gaming pieces.  It is intended for two players, but more may work.  This game is highly inspired by A Game of Thrones.  It is loosely inspired by Dragon Dice, which I've never played but still have some ideas about.  There might also be a bit of Small Worlds thrown in to the optional rules.
-
+\normalsize
 
 \section{Setup}
+
 
 Ingredients: 
 \begin{itemize}
@@ -38,62 +40,84 @@ Ingredients:
   \item 2 players.  More may be possible, but the logistics of that are up to you.
 \end{itemize}
 
-Shuffle the deck of cards and lay it out in a 7x7 grid, with a king card at each of the corners.  The cards represent terrain on a battlefield.  Red cards, diamonds and hearts, are flat plains.  Spades are mountains and clubs are forests.  Kings are castles.  Queens and jacks are new recruits.  Jokers are of course wild and will be covered later.  Aces have a value of 1.  Jacks and queens have a value of 10, but kings are 13.
+Shuffle the deck of cards and lay it out in a 7x7 grid.  Put a king at each of the corners.  These are your castles - the game is won by capturing three of these.
 
-Each side has a set of \reinforcements tokens representing their combat units.  A group of units is called an army.  An army can never be bigger than \maxarmy units, so spread out.  Each turn a player picks and moves several of his armies.  If an enemy unit occupies that piece of terrain, they fight.
+Player 1 selects a castle and puts \startarmy tokens on it.  Player 2 selects 2 castles and puts \startarmy on each of those.  Player 1 gets to put \startarmy tokens on the final castle.  The remaining tokens are your reserves.  They may get played later, but no more than \reinforcements tokens can ever be used by either player.
+
+\section{Turns}
+
+\subsection{Recruitment}
+
+At the beginning of each turn you can try to recruit more tokens from your reinforcements.  Each castle you control can roll a die.  On a result of \recruitroll you can add a token from your reinforcements to the castle.   Note that to control a castle you need to have tokens on it.
+
+\subsection{Movement}
+
+During your turn you can choose three groups of tokens to move across the board.  Pick a card and move tokens from it to an adjacent card.  Diagonal movement is allowed.  You don't have to move all the tokens when you pick a card - tokens can be left behind.  You can spend your movement on the same group of tokens twice in one round, but not three times.  
+
+Black cards, clubs and spades, represent forested and mountainous terrain respectively.  Because they are harder to move through they are considered to be rough terrain.  This means that when you move tokens into one of cards, it's more difficult.  Each token moving onto the rough terrain has to roll a six sided die.  On a high roll (4-6) they enter the terrain.  Otherwise they're left behind.  Mountains and forests have benefits which are explained in the Terrain section. 
+
+Whenever your tokens land on a square with enemy units, combat happens.
+
+\section{Combat}
+
+\subsection{Basics}
+
+Combat is straightforward.  Each side rolls a d6 for each token on their side of the fight.  Add these together.
+
+Next, add each army's terrain bonus:  The defending army adds the value of their card the fight is taking place on and the attackers use the value of the card they attacked from.  Aces are valued at 1 point.  Jacks and queens are 10.  Kings are the best defended cards on the board and are worth 13.
+
+Finally, add support for nearby allies.  Each token that's on a card adjacent to the combat adds a point to his side's army.  
+
+Whomever rolled higher wins the fight.  The loser automatically loses one of his tokens, plus one per every five points by which he was defeated.  If the attacker lost, he is pushed back to the square he attacked from.  If the defender lost, he is pushed directly back. 
+
+In the event of a tie, losses are heavy.  Both sides lose a token and then reroll.
+
+\subsection{Notes}
+
+Attacking into rough terrain requires a roll as usual.  This means that on average, only half your tokens will make it into the fight - tokens left behind don't get to roll!
+
+Supporting tokens only add 1 point to combat, while those in the combat can add 1-6 points.  However supporting tokens won't die if you roll badly.
+
+Tokens that are killed return to your reinforcement pool.  You can only ever have \reinforcements tokens in play at a time, but if they die they can be replaced.
+
+Just like movement, supporters are considered adjacent if they're next to or diagonal to a card.  
+
+\section{Terrain}
+
+Different types of terrain affect how combat works.  In addition to being rough terrain, forests and mountains have the following effects:
+
+\subsection{Plains - Diamonds and Hearts}
+
+Nothing special.
+
+\subsection{Forest - Clubs}
+
+Forested terrain is easily defended.  When someone attacks into a forest from a non-forest, they get no bonus from terrain.  
+
+\subsection{Mountain - Spades}
+
+Mountains provide high ground which is advantageous for attackers.  Attacking a non-mountain from a mountain removes the defender's terrain bonus.
+
+Note that attacking a forest from a mountain results in both penalties - nobody gets a terrain bonus! 
+
+\subsection{Conscripts - Jacks and Queens}
+
+Non-king face cards provide additional units.  When you land on a jack or queen, add a unit to that army.  Then flip over the card, as it's depleted.
+
+Jacks and Queens, flipped or not, do not count as forests or mountains, despite their suit.  They always provide a 10 point terrain bonus.  
+
+\subsection{Castles - Kings}
+
+Kings also do not count as a forest or mountain, but provide a 13 point terrain bonus.  Castles are the starting point for the game.  They are also the ending point.  When a player starts his turn controlling three castles, he wins.
+
+\subsection{Jokers - Wild}
+
+Jokers are wild cards.  If you land on a joker, look at the 5 cards that were not included in the grid.  Pick one of those and replace the joker with it.
 
 \section{Winning}
 
 The game is won when a player begins his turn controlling 3 of the 4 castles.  Control is defined by occupying that castle with at least one unit.
 
-\section{Combat}
-
-When opposing armies enter the same space, combat happens.  Both sides roll dice and figure out what their score is.  
-
-\begin{itemize}
-  \item Each player rolls a 6 sided die for each of the units in his army.  
-  \item Add the value on the card as a terrain bonus.  The defender uses the card the battle is taking place on.  The attacker uses the terrain he used to launch his attack.
-  \item Add 1 for each supporting unit.  A unit provides support if it's in an army in a space adjacent to the battle.  Note that the battle only takes place in the space where the armies meet - being adjacent to the terrain an attacker left without being adjacent to the actual battle provides no support.  (Diagram needed?)
-\end{itemize}
-
-Whomever scores higher wins.  One of the loser's units dies, plus one more for every 5 points difference between the combat scores.  If the defender lost, his remaining army is pushed backward (if this isn't an option, the attacker chooses where the defender is pushed).  If the attacker lost, his units return to the space they were in before the attack.
-
-In the event of a tie, losses are heavy.  Both sides lose a unit and reroll.
-
-\section{Movement}
-
-A player gets three moves a turn.  You can move an army, or a portion of an army to an adjacent card.  Diagonal movement is okay.  No one unit may move more than two spaces in a single turn.
-
-The different cards represent different types of terrain and have different tactical advantages.
-
-Plains are plain.  Nothing special here.  \emph{Hearts and diamonds.}
-
-Forests are difficult to move through but easily defended.  Entering a forest from a non-forest space requires each unit entering the space to roll high (4-6) on a die roll.  Each unit that rolls 4-6 moves into the terrain.  The others are left behind.  Armies hiding in the forest are sheltered from their attackers - the attacker gains no terrain bonus, unless he is attacking from another forest space. \emph{Clubs.}
-
-Mountains are also difficult to move through, requiring a high die roll to enter from a non mountain space.  They provide high ground.  When an attack is initiated from a mountain, the defender gets no terrain bonus to defense unless he is defending a mountain.  \emph{Spades.}
-
-Face cards are additional units that may be picked up.  Face cards ignore their suit and always count as plains, so no rolls are needed to enter those spaces.  When you land on a queen or jack card, add a unit to that army.  Then flip the face card over.  Recruits can only be collected once before they are depleted.  Face cards are always worth 10 points as combat squares.  \emph{Queens and jacks.}
-
-Note that failing to move through difficult terrain still counts as a move action and works against the unit's 2 moves per turn limit.  Being recruited also counts against that limit.  Also note that you must roll to enter rough terrain even when attacking.
-
-Jokers are wild cards.  When you land on a joker, choose a card from the leftover stack of cards, and replace the joker with that.  \emph{Jokers.}
-
-
-\section{Recruitment}
-
-In addition to terrain based recruitment, each castle has the opportunity to produce troops.  At the beginning of each turn, if you have enough units left in your reinforcements, roll a die for each castle you control.  On a \recruitroll, add an additional unit to that castle.
-
-\section{Summary - Playing the Game}
-
-Set up the cards as described in setup.  7x7 grid, with a king in each corner.
-
-Now players choose their starting positions.  Player one picks one of the castles.  Then player two picks his two castles.  Player one gets the last castle, but gets the first turn.
-
-Each turn, roll for reinforcments at each castle.
-
-Each player gets three movement actions.  No unit may move more than twice in a turn.  If you enter the same space as an opposing army, fight.
-
-When a player begins the turn with units on three castles, that player wins.  
 
 \newpage
 \section{Optional Rules}
@@ -138,6 +162,12 @@ All cards are face down.  When a card becomes occupied, flip it over.   At any t
 
 If one were to use tactics joker as a substitute for mass combat in Dungeons and Dragons 4th edition, it could be suplemented with the following skill checks.  A skill check can be made in place of a move action once per turn.  Skills that target an opponent use the hard difficult.  Skills that target terrain use normal difficulty plus the value of the terrain.
 
+You can use these rules in one of two ways.  Each PC can be a unit in the army or a PC can control the army.
+
+If a PC is in command, he can use the abilities anywhere appropriate.  Otherwise play as normal.
+
+If each PC acts as a unit, put them on the board with the other tokens.  PCs don't roll in combat, instead they add their character level.  (Don't forget to include NPCs of similar levels!)  Furthermore, a PC using a skill can only use that skill in his square or an adjacent one.
+
 \subsubsection{Acrobatics}
 
 Moving into a forest does not negate your terrain bonus when attacking.
@@ -172,7 +202,7 @@ Pick one of your armies.  Roll a combat check.  Don't show it to your opponent. 
 
 \subsubsection{Intimidate}
 
-(Also not sure)
+Pick one of your armies.  Until the start of your next turn, the terrain they occupy and all adjacent cards are considered rough terrain to your enemies.
 
 \subsubsection{Nature}
 
